@@ -1,6 +1,16 @@
 #include <stdio.h>
 
+void mostrarVetor(int vet[], int inicio, int fim){
+    printf("[ ");
+    for(int i = inicio; i <= fim; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("]\n");
+}
+
 void conq(int vet[], int inicio, int fim, int *min, int *max){
+    printf("\nDividindo vetor: ");
+    mostrarVetor(vet, inicio, fim);
     if(inicio == fim){
         *min = vet[inicio];
         *max = vet[inicio];
@@ -17,8 +27,13 @@ void conq(int vet[], int inicio, int fim, int *min, int *max){
         }
         return;
     }
-
     int meio = (inicio+fim)/2;
+    printf("Esquerda: ");
+    mostrarVetor(vet, inicio, meio);
+
+    printf("Direita: ");
+    mostrarVetor(vet, meio + 1, fim);
+
     int min1, min2, max1, max2;
 
     conq(vet, inicio, meio, &min1, &max1);
@@ -33,7 +48,9 @@ void conq(int vet[], int inicio, int fim, int *min, int *max){
         *max = max1;
     }else{
         *max = max2;
-    }
+    } printf("\nJuntando partes: ");
+    mostrarVetor(vet, inicio, fim);
+    printf("Min final = %d | Max final = %d\n", *min, *max);
 }
 
 int main(void){
