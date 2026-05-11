@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compilar Projeto Completo",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "C:\\Users\\teste\\Documents\\projeto\\implementacao\\*.cpp",
+                "-o",
+                "C:\\Users\\teste\\Documents\\projeto\\implementacao\\programa.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Users\\teste\\Documents\\projeto\\implementacao"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compilador: ucrt64 g++"
+        }
+    ]
+}
